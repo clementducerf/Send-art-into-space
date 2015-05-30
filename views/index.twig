@@ -1,0 +1,15 @@
+<html>
+    <head>
+    	<title>Title</title>
+    </head>
+    <body>
+	{% block content %}
+	<h1> metaapidotart</h1>
+	<ul>
+	    {% for work in works %}
+      <li> <p>{{ work.title }}</p> <img src="{{ work.image_url }}" ></li>
+    {% endfor %}
+</ul>
+	{% endblock %}
+    </body>
+</html>

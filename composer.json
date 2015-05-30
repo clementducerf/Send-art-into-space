@@ -1,0 +1,9 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "guzzlehttp/guzzle": "@stable",
+        "monolog/monolog": "~1.13",
+        "twig/twig": "@stable"
+
+    }
+}
