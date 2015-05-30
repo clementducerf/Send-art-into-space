@@ -6,23 +6,27 @@ $app = new Silex\Application();
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views'
 ));
-
+//on active le debug
 $app['debug']= true;
-$app->get('/{q}', function($q) use($app) { 
+
+$app->get('/', function() use($app) { 
 
   $client = new GuzzleHttp\Client();
   $apikey = getenv('API_DOT_ART_KEY');
- 
-  $res = $client->get('http://api.art.rmngp.fr/v1/works?api_key='.$apikey .'&aggregates[][name]=authors_citizenship&aggregates[][type]=terms&aggregates[][field]=authors.citizenship&facets[periods]=19e+siècle'.'&q='.$q.'&per_page='.'10' );
- 
+  $q = empty($_GET['oeuvre']) ? "&q=batman" : "&q=".$_GET['oeuvre'];
+ //$res = $client->get('http://api.art.rmngp.fr/v1/works?api_key='.$apikey .'&aggregates[][name]=authors_citizenship&aggregates[][type]=terms&aggregates[][field]=authors.citizenship&facets[periods]=19e+siècle'.'&q='.$q.'&per_page='.'100' );
+  $res = $client->get('http://api.art.rmngp.fr/v1/works?api_key='.$apikey.$q.'&per_page='.'1'.'&' );
+  
   $decoded = json_decode($res->getBody());
-  $hits = $decoded->hits->hits;
+  //print_r ($decoded);
+  $hits = $decoded->hits->  hits;
   $works = [];
   $work = [];
 
   foreach ($hits as $hit){
-    $work["image_url"] = $hit->_source->images[0]->urls->large->url;
+    $work["image_url"] = $hit->_source->images[0]->urls->medium->url;
     $work["title"] = $hit->_source->title->fr;
+    $work["authors"] = $hit->_source->authors;
     $works[]=$work;
   }
   

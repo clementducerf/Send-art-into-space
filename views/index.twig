@@ -1,15 +1,21 @@
 <html>
     <head>
-    	<title>Title</title>
+    	<title>Send art into space!</title>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/supersized.core.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+		<script type="text/javascript" src="js/rotate3Di.js"></script>
+		<script type="text/javascript" src="js/supersized.core.3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/commun.js"></script>
+		<link rel="stylesheet" href="css/styles.css" type="text/css" />
     </head>
+
     <body>
 	{% block content %}
-	<h1> metaapidotart</h1>
-	<ul>
 	    {% for work in works %}
-      <li> <p>{{ work.title }}</p> <img src="{{ work.image_url }}" ></li>
-    {% endfor %}
-</ul>
+      	<img class="moving" src="{{ work.image_url }}" >
+    	{% endfor %}
 	{% endblock %}
+	<div id="header"><span>Send </span><form method="get" action="/"><input type="text" name="oeuvre"/></form><span> into space!</span></div>
     </body>
-</html>
+</html>	

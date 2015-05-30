@@ -1,0 +1,26 @@
+
+    	body {
+            overflow:hidden;
+    	}
+
+    	.moving {
+            position:absolute;
+    	}
+
+        #art {
+            display: block;
+            width: auto;
+            margin: auto;
+        }
+        #header {
+            position:relative;
+            top: 0px;
+            width:300px;
+            padding-top: 10px;
+            margin:auto;
+            color:white;
+            font-family: Verdana,Arial,sans-serif;
+        }
+        form, #header>p {
+            display: inline-block;
+        }
