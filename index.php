@@ -14,7 +14,7 @@ $app->get('/', function() use($app) {
   $client = new GuzzleHttp\Client();
 
   $env = base64_decode($_ENV['PLATFORM_VARIABLES']);
-  $apikey = empty($env['API_DOT_ART_KEY']) ? get_env("API_DOT_ART_KEY"): $env['API_DOT_ART_KEY'];
+  $apikey = empty($env['API_DOT_ART_KEY']) ? getenv("API_DOT_ART_KEY"): $env['API_DOT_ART_KEY'];
   $q = empty($_GET['oeuvre']) ? "&q=0000" : "&q=".$_GET['oeuvre'];
  //$res = $client->get('http://api.art.rmngp.fr/v1/works?api_key='.$apikey .'&aggregates[][name]=authors_citizenship&aggregates[][type]=terms&aggregates[][field]=authors.citizenship&facets[periods]=19e+siècle'.'&q='.$q.'&per_page='.'100' );
   $res = $client->get('http://api.art.rmngp.fr/v1/works?api_key='.$apikey.$q.'&per_page='.'1'.'&' );
