@@ -1,0 +1,6 @@
+"https://{default}/":
+    type: upstream
+    upstream: "php:php"
+"http://{default}/":
+    type: redirect
+    to: "https://{default}/"

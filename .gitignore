@@ -1,0 +1,12 @@
+bundles/
+bootstrap.php.cache
+cache/*
+config/parameters.yml
+logs/*
+cache/.gitkeep
+logs/.gitkeep
+phpunit.xml
+/build/
+/vendor/
+/bin/
+/composer.phar
