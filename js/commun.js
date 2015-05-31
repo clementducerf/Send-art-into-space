@@ -7,8 +7,11 @@ $(document).ready(function() {
     var randomX = Math.floor((Math.random() * screenWidth) + 1);
     var randomX2 = Math.floor((Math.random() * screenWidth) + 1);
 
-    if (randomX < screenWidth-768) { randomX-= 768;}
-    if (randomX < 768) { randomX+= 768;}
+    console.log("randomX: "+randomX);
+    if (randomX > screenWidth-768) { randomX-= 768;}
+    //if (randomX < 768) { randomX+= 100;}
+
+    console.log("randomX: "+randomX);
 	$('.moving').css('top',(screenHeight/2)+"px")
 	//$('#art').css('left',(screenWidth/2)+"px")
 
