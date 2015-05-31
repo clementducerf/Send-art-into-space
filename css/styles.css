@@ -2,7 +2,10 @@
 body {
     overflow:hidden;
 }
-*{font-family: 'PT Sans', sans-serif; font-variant: small-caps;}
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-variant: small-caps;
+}
 .moving {
     position:absolute;
 }
