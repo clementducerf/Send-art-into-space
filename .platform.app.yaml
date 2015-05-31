@@ -3,7 +3,29 @@ name: php
 toolstack: "php:symfony"
 
 web:
-    document_root: "/web"
+    document_root: "/"
     passthru: "/index.php"
+    whitelist:
+      # CSS and Javascript.
+      - \.css$
+      - \.js$
 
+      # image/* types.
+      - \.gif$
+      - \.jpe?g$
+      - \.png$
+      - \.ico$
+
+      # application/x-shockwave-flash.
+      - \.swf$
+
+
+      # fonts types.
+      - \.ttf$
+      - \.eot$
+      - \.woff$
+      - \.otf$
+
+      # robots.txt.
+      - /robots\.txt$
 disk: 2048
