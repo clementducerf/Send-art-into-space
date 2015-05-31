@@ -1,0 +1,16 @@
+name: php
+
+toolstack: "php:symfony"
+
+web:
+    document_root: "/web"
+    passthru: "/index.php"
+
+disk: 2048
+
+mounts:
+    "/logs": "shared:files/logs"
+
+hooks:
+    build: |
+        mkdir -p logs
