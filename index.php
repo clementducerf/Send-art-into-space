@@ -14,7 +14,7 @@ $app->get('/', function() use($app) {
   $client = new GuzzleHttp\Client();
 
   $env = base64_decode($_ENV['PLATFORM_VARIABLES']);
-  echo "ENV $env $env['API_DOT_ART_KEY']";
+  echo "ENV $env ".$env['API_DOT_ART_KEY'];
   $apikey = empty($env['API_DOT_ART_KEY']) ? getenv("API_DOT_ART_KEY"): $env['API_DOT_ART_KEY']; 
   echo "APIKEY $apikey"; die();
   $q = empty($_GET['oeuvre']) ? "&q=0000" : "&q=".$_GET['oeuvre'];
