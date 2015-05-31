@@ -7,11 +7,13 @@ $(document).ready(function() {
     var randomX = Math.floor((Math.random() * screenWidth) + 1);
     var randomX2 = Math.floor((Math.random() * screenWidth) + 1);
 
+    if (randomX < screenWidth-768) { randomX-= 768;}
+    if (randomX < 768) { randomX+= 768;}
 	$('.moving').css('top',(screenHeight/2)+"px")
 	//$('#art').css('left',(screenWidth/2)+"px")
 
-    $('.moving').animate({ width: +screenWidth+'px' }, 0);
-    $('.moving').animate({ left: +randomX2/2+'px' }, 0);
+    $('.moving').animate({ width: '758px' }, 0);
+    $('.moving').animate({ left: +randomX+'px' }, 0);
 
     //$('.moving').rotate3Di(180, { duration: 2000, queue: false })
 
