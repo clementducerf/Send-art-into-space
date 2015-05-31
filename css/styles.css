@@ -16,10 +16,10 @@ body {
     position:relative;
     top: 0px;
     width:300px;
-    padding-top: 10px;
+    padding-top: 15px;
     margin:auto;
     color:white;
-    font-family:'Open Sans', sans-serif;
+    font-family: Verdana, Arial, sans-serif;
     line-height: 10px;
 }
 form, #header>p {
