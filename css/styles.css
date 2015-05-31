@@ -2,7 +2,7 @@
 body {
     overflow:hidden;
 }
-*{font-family: 'PT Sans', sans-serif;}
+*{font-family: 'PT Sans', sans-serif; font-variant: small-caps;}
 .moving {
     position:absolute;
 }
@@ -15,27 +15,33 @@ body {
 #header {
     position:relative;
     top: 0px;
-    width:300px;
-    padding-top: 15px;
+    width:360px;
+    padding: 15px;
     margin:auto;
-    color:white;
-    line-height: 10px;
-    font-size:120%;
+    color:#dfdfdf;
+    line-height: 16px;
+    font-size:24px;
 }
 form, #header>p {
     display: inline-block;
 }
 
 input {
-    width:100px;
+    width:120px;
 }
  input[type="text"] {
-  padding: 10px;
-  border: solid 1px #dcdcdc;
+      font-variant: small-caps;
+  padding: 4px;
+  border: solid 1px #dfdfdf;
+  box-shadow: 0 0 1px 1px #969696;  box-shadow: 0 0 5px 3px #969696;
+  background-color:   #dfdfdf;
   transition: box-shadow 0.3s, border 0.3s;
+  opacity:0.9;
+         font-size:20px;
 }
- input[type="text"]:focus,
 input[type="text"].focus {
+  background-color:   #fff;
   border: solid 1px #707070;
-  box-shadow: 0 0 5px 1px #969696;
+  box-shadow: 0 0 5px 10px #fff;
+  opacity:1;
 }
